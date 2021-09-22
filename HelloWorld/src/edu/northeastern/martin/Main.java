@@ -15,7 +15,7 @@ public class Main {
         System.out.println(numStudents);
         System.out.println(numStudent);
 
-        int max = Integer.MAX_VALUE;
+        int max = Integer.MAX_VALUE;//fdsfs
         max += 1;
         int min = Integer.MIN_VALUE;
         System.out.println(max);
