@@ -11,5 +11,10 @@ public class Main {
         Cat c1 = new Cat();
         c1.breathe();
         r1.breathe();
+
+        Car beetle = new Car("beetle",17,true,4);
+        beetle.setSeats(new Seats(2));
+        System.out.println(beetle.getGearBox().isAuto());
+        System.out.println(beetle.getName());
     }
 }
