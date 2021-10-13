@@ -34,9 +34,9 @@ public class Main {
         System.out.println(ransomNote("abcd","abde"));
         System.out.println();
 
-        //Question 5
+        //Question
         System.out.println("Question5: ");
-        System.out.println(checkPattern("1n2n3m"));
+        System.out.println(checkPattern("1A2n3m"));
         System.out.println();
 
     }
