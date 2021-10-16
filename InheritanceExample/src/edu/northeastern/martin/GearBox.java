@@ -3,6 +3,15 @@ package edu.northeastern.martin;
 public class GearBox {
     boolean isAuto;
 
+    public int getCurrentGear() {
+        return currentGear;
+    }
+
+    public void setCurrentGear(int currentGear) {
+        this.currentGear = currentGear;
+    }
+
+    int currentGear;
     public boolean isAuto() {
         return isAuto;
     }
