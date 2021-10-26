@@ -22,6 +22,5 @@ public class Projector {
     }
 
     public static void simpleFunction(int value){
-        //Debug.log("sampleUnfction " + "value = " + value + userID);
     }
 }
