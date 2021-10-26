@@ -22,7 +22,6 @@ public class Main {
         for (int i = 0; i < length; i++) {
             if(nums[i] > 0 ){
                 break;
-
             }
             if( i > 0 && nums[i] == nums[i-1]){
                 continue;
