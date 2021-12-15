@@ -14,6 +14,10 @@ public class Main {
         roomba.clean();
         System.out.println();
         roomba.print();
-
+        System.out.println();
+        roomba.turnRight();
+        System.out.println(roomba.move());;
+        roomba.clean();
+        roomba.print();
     }
 }
