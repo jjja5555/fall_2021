@@ -6,15 +6,15 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here["talk","tons","fall","tail","gale","hall","negs"]
+        //"hot","dot","dog","lot","log","cog"
         List<String> list = new ArrayList<>();
-        list.add("talk");
-        list.add("tons");
-        list.add("fall");
-        list.add("tail");
-        list.add("gale");
-        list.add("hall");
-        list.add("negs");
-        System.out.println(ladderLength("talk","tail",list));
+        list.add("a");
+        list.add("b");
+        list.add("c");
+//        list.add("lot");
+//        list.add("log");
+//        list.add("cog");
+        System.out.println(ladderLength("a","c",list));
     }
     public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
         if(!wordList.contains(beginWord)){
@@ -25,25 +25,53 @@ public class Main {
         if(map.size() == 0){
             return 0;
         }
-        int time = 1;
-        Queue<String> queue = new LinkedList<>();
-        Map<String, Boolean> traveled = new HashMap<>();
-        queue.add(beginWord);
-        while(!queue.isEmpty()){
-            time++;
-            int size = queue.size();
+        int startTime = 0;
+        int endTime = 1;
+        Queue<String> startQueue = new LinkedList<>();
+        Queue<String> endQueue = new LinkedList<>();
+        Map<String, Integer> traveled = new HashMap<>();
+        startQueue.add(beginWord);
+        endQueue.add(endWord);
+        while(!startQueue.isEmpty() || !endQueue.isEmpty()){
+            startTime++;
+            int size = startQueue.size();
             for (int i = 0; i < size; i++) {
-                Set<String> set = map.get(queue.poll());
+                Set<String> set = map.get(startQueue.poll());
                 if(set != null){
                     for (String s : set) {
-                        if(traveled.containsKey(s)){
-                            continue;
+                        if(traveled.containsKey(s)) {
+                            int flag = traveled.get(s);
+                            if (flag== 1) {
+                                continue;
+                            } else if (flag == -1){
+                                return startTime+endTime;
+                            }
                         }
                         if(s.equals(endWord)){
-                            return time;
+                            return startTime;
                         }
-                        queue.add(s);
-                        traveled.put(s,true);
+                        startQueue.add(s);
+                        traveled.put(s,1);
+                    }
+                }
+
+            }
+            endTime++;
+            size = endQueue.size();
+            for (int i = 0; i < size; i++) {
+                Set<String> set = map.get(endQueue.poll());
+                if(set != null){
+                    for (String s : set) {
+                        if(traveled.containsKey(s)) {
+                            int flag = traveled.get(s);
+                            if (flag== -1) {
+                                continue;
+                            } else if (flag == 1){
+                                return startTime+endTime -1;
+                            }
+                        }
+                        endQueue.add(s);
+                        traveled.put(s,-1);
                     }
                 }
 
