@@ -1,5 +1,6 @@
 package edu.northeastern.martin;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -22,7 +23,7 @@ public class Main {
 	// write your code here new int []{1,8,3,5}
         System.out.println(connectSticks(new int []{1,8,3,5}));
 
-
+        ArrayList<String> list = new ArrayList<>();
         //Huffman
         TreeNode a= new TreeNode(45,'a');
         TreeNode b= new TreeNode(13,'b');
