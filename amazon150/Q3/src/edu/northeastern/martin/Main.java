@@ -1,7 +1,11 @@
 package edu.northeastern.martin;
 
+import javafx.scene.layout.Priority;
+
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 public class Main {
 
@@ -30,7 +34,9 @@ public class Main {
 
             }
         }
+        PriorityQueue<String> queue = new PriorityQueue<>();
         return maxLength;
+
     }
 
     //window
@@ -38,16 +44,18 @@ public class Main {
         char [] arr = s.toCharArray();
         int maxLength = 0;
         int tempLength = 0;
-        Map<Character,Integer> map = new HashMap<>();
+        int [] map = new int[200];
+        Arrays.fill(map,-1);
         for (int i = 0; i < arr.length; i++) {
-            if(map.containsKey(arr[i])){
+            if(map[arr[i]]!= -1){
                 maxLength = Math.max(maxLength,tempLength);
                 tempLength = 0;
-                i = map.get(arr[i]);
-                map.clear();
+                i = map[arr[i]];
+                Arrays.fill(map,-1);
                 continue;
+
             }
-            map.put(arr[i],i);
+            map[arr[i]] = i;
             tempLength++;
             if(i == arr.length-1){
                 maxLength = Math.max(maxLength,tempLength);
