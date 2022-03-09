@@ -23,6 +23,7 @@ public class Main {
         String [][] input = new String[][]{{"APPEND","Hello, world!"},{"SELECT","7","12"},{"BACKSPACE"},{"MOVE","6"},{"UNDO"},{"UNDO"},{"REDO"},{"REDO"}};
         String [] test = solution(input);
         System.out.println();
+        StringBuilder sb = new StringBuilder();
     }
 
     public static String [] solution(String [][] input){
