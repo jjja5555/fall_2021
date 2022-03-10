@@ -1,13 +1,19 @@
 package edu.northeastern.martin;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
         System.out.println(largestRectangleArea(new int[]{2,1,5,6,2,3}));
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        TreeSet <int []> set = new TreeSet<>(new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return 0;
+            }
+        });
     }
     public static int largestRectangleArea(int[] heights) {
         int n = heights.length+2;
